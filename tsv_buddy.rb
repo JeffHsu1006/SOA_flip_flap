@@ -6,8 +6,7 @@ module TsvBuddy
     @data = []
 
     lines = tsv.split("\n").map { |line| line.split("\t") }
-    key = lines.first
-    lines.shift
+    key = lines.shift
     lines.each do |line| # put the records into hash to result
       record = {}
       key.each_index { |index| record[key[index]] = line[index] }
